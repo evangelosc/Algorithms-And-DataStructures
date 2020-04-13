@@ -10,6 +10,7 @@ def intToBinary(num):
     sumT = 0
     while num:
         sumT += num & 1
-        num >>= 1 # num//2
+        num >>= 1
+#        num //= 2
     return sumT
 print(intToBinary(5))
