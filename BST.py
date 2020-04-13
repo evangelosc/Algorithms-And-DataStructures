@@ -4,6 +4,7 @@ class Node(object):
         self.left = None
         self.right = None
 
+#Basic BST functions
 class binarySearchTree(object):
     def __init__(self):
         self.root = None
