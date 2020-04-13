@@ -9,7 +9,7 @@ def incF(A):
         if A[i] != 10:
             break
         A[i] = 0
-        A[i-1] += 1
+        A[i-1] = A[i-1] + 1
     if A[0] == 10:
         A[0] = 1
         A.append(0)
