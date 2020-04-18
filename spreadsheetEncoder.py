@@ -10,3 +10,15 @@ print(spreadsheetEncoder('AAA'))
 print(spreadsheetEncoder('Z'))
 print(spreadsheetEncoder('AA'))
 print(spreadsheetEncoder('ABCDF'))
+
+
+def num2SpreadSheet(n):
+    string = ""
+    while n > 0:
+        n,remainder = divmod(n - 1, 26)
+        string = chr(65 + remainder) + string
+    return string
+
+print(num2SpreadSheet(26))
+print(num2SpreadSheet(27))
+print(num2SpreadSheet(28))
