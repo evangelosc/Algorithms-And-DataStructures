@@ -10,4 +10,5 @@ int main(){
     for (auto el:res){
         cout << el << endl;
     }
+    return 0;
 }

@@ -6,4 +6,5 @@ int main(){
     Solution s;
     string input_string = "G()(al)";
     cout << s.interpret(input_string) << endl;
+    return 0;
 }
