@@ -1,3 +1,6 @@
+#!/usr/bin/python
+
+
 class Solution(object):
     def __init__(self):
         self.res = ""
