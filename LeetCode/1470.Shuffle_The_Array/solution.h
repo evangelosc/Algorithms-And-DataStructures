@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        vector<int> res;
+        for (int i=0; i!=(int)(nums.size())/2; i++){
+            res.push_back(nums[i]);
+            res.push_back(nums[i+n]);
+        }
+        return res;
+    }
+};
