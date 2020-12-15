@@ -1,21 +1,18 @@
 #include <iostream>
+#include <vector>
+#include <string>
 
 int fibonacci_sum_squares(long long n) {
-    if (n <= 1)
-        return n;
-
-    long long previous = 0;
-    long long current  = 1;
-    long long sum      = 1;
-
-    for (long long i = 0; i < n - 1; ++i) {
-        long long tmp_previous = previous;
-        previous = current;
-        current = tmp_previous + current;
-        sum += current * current;
+    std::vector<int> f {0, 1};
+    std::vector<int> last {0, 1};
+    std::string tmp;
+    for (int i=2; i!=60; ++i){
+        f.push_back(f[i-1]+f[i-2]);
+        tmp = std::to_string(f[i]).back();
+        last.push_back(std::stoi(tmp));
     }
-
-    return sum % 10;
+    int res = last[n%60]*last[n%60] + last[n%60]*last[(n-1)%60];
+    return res%10;
 }
 
 int main() {
