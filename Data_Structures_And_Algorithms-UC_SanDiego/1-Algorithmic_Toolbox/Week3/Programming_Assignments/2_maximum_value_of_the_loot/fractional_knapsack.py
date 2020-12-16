@@ -1,17 +1,28 @@
 # Uses python3
 import sys
 
-def get_optimal_value(capacity, weights, values):
-    value = 0.
-    # write your code here
-
-    return value
+def get_optimal_value(capacity, dic, value_per_weight):
+    V = 0
+    for i in range(n):
+        if capacity == 0:
+            return(V)
+        a = min(capacity, dic[value_per_weight[i]])
+        V = V + value_per_weight[i] * a
+        capacity = capacity - a
+    return V
 
 
 if __name__ == "__main__":
-    data = list(map(int, sys.stdin.read().split()))
-    n, capacity = data[0:2]
-    values = data[2:(2 * n + 2):2]
-    weights = data[3:(2 * n + 2):2]
-    opt_value = get_optimal_value(capacity, weights, values)
-    print("{:.10f}".format(opt_value))
+    c = input()
+    n, capacity = map(int, c.split())
+    value_per_weight = []
+    dic = {}
+    # dic = {v/w: weight}
+    for i in range(n):
+        c = input()
+        v, w = map(int, c.split())
+        value_per_weight.append(v / w)
+        dic[v / w] = w
+    value_per_weight.sort(reverse=True)
+    opt_value = get_optimal_value(capacity, dic, value_per_weight)
+    print("{:.4f}".format(opt_value))
