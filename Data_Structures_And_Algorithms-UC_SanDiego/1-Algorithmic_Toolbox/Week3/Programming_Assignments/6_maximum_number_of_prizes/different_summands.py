@@ -3,7 +3,13 @@ import sys
 
 def optimal_summands(n):
     summands = []
-    #write your code here
+    i = 0
+    while n > 0:
+        i += 1
+        if n - i <= i:
+            i = n
+        summands.append(i)
+        n -= i
     return summands
 
 if __name__ == '__main__':

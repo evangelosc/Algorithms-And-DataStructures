@@ -2,16 +2,19 @@
 
 import sys
 
-def largest_number(a):
-    #write your code here
+def largest_number(lst):
+    n = len(lst)
+    for i in range(n - 1):
+        for i in range(n - 1 - i):
+            if lst[i] + lst[i+1] < lst[i + 1] + lst[i]:
+                 lst[i], lst[i + 1] = lst[i + 1], lst[i]
     res = ""
-    for x in a:
-        res += x
+    for d in lst:
+        res += d
     return res
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    data = input.split()
-    a = data[1:]
-    print(largest_number(a))
+    n = int(input())
+    data = input().split()
+    print(largest_number(data))
     
