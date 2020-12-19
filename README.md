@@ -11,9 +11,12 @@ I have worked on both Python and C++, you can find the implementations below:
 * [LeetCode](https://github.com/evangelosc/Algorithms-And-DataStructures/tree/master/LeetCode)
 * [Data_Structures_And_Algorithms_UC-SanDiego](https://github.com/evangelosc/Algorithms-And-DataStructures/tree/master/Data_Structures_And_Algorithms-UC_SanDiego)
 
-The <strong>Data_Structures_And_Algorithms_UC-SanDiego</strong> folder consists of learning materials, coding exercises, my personal progress on the classic Coursera course.
+The <strong>Data_Structures_And_Algorithms_UC-SanDiego</strong> folder consists of learning materials, coding exercises and my personal progress on the classic Coursera course.
 
-The majority of my implementations are solutions of leetcode problems.
-I haven't so far associated each solution with the number of each problem.
+The <strong>LeetCode</strong> folder includes my solutions and their Unit Test of LeetCode coding problems.
 
-The <strong>LeetCode</strong> folder includes both Python and C++ solutions to LeetCode problems. You can see the number of each question for easy navigation.
+The <strong>Python and C++</strong> folders are deprecated, but they include interesting solutions of CS 101 level problems.
+
+<strong>TODO:</strong>
+* Prioritize the LeetCode folder depending on the level of difficutly of each problem.
+* Write a main README file for the Data_Structures_And_Algorithms_UC-SanDiego folder
