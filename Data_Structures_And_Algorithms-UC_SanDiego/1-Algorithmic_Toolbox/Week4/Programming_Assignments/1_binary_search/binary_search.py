@@ -2,7 +2,7 @@
 import sys
 
 def binary_search(a, x):
-    left, right = 0, len(a)
+    left, right = 0, len(a) - 1
     while(left<=right):
         m = (left+right)//2
         if a[m]==x:
