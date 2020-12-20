@@ -1,18 +1,51 @@
 # Uses python3
 import sys
 
-def get_number_of_inversions(a, b, left, right):
-    number_of_inversions = 0
-    if right - left <= 1:
-        return number_of_inversions
-    ave = (left + right) // 2
-    number_of_inversions += get_number_of_inversions(a, b, left, ave)
-    number_of_inversions += get_number_of_inversions(a, b, ave, right)
-    #write your code here
-    return number_of_inversions
+def mergeSort(a, n):
+    temp_a = [0] * n
+    return _mergeSort(a, temp_a, 0, n - 1)
+
+
+def _mergeSort(a, temp_a, left, right):
+    inv_count = 0
+    if left < right:
+        mid = (left + right) // 2
+        inv_count += _mergeSort(a, temp_a, left, mid)
+        inv_count += _mergeSort(a, temp_a, mid + 1, right)
+        inv_count += merge(a, temp_a, left, mid, right)
+    return inv_count
+
+
+def merge(a, temp_a, left, mid, right):
+    i = left
+    j = mid + 1
+    k = left
+    inv_count = 0
+    while i <= mid and j <= right:
+        if a[i] <= a[j]:
+            temp_a[k] = a[i]
+            k += 1
+            i += 1
+        else:
+            inv_count += (mid - i + 1)
+            temp_a[k] = a[j]
+            k += 1
+            j += 1
+    while i <= mid:
+        temp_a[k] = a[i]
+        k += 1
+        i += 1
+    while j <= right:
+        temp_a[k] = a[j]
+        k += 1
+        j += 1
+    for i in range(left, right + 1):
+        a[i] = temp_a[i]
+    return inv_count
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))
     b = n * [0]
-    print(get_number_of_inversions(a, b, 0, len(a)))
+    print(mergeSort(a, len(a)))
