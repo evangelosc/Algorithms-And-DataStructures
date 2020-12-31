@@ -16,5 +16,4 @@ int main(){
     if (s.containsNearbyDuplicate(v3, 2) == false) { cout << "Test 3 - PASS" << endl;}
     else { cout << "Test 3 - Failed" << endl; }
     return 0;
-    return 0;
 }
